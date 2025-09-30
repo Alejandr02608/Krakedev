@@ -6,7 +6,17 @@ saludar=function(){
 
     let estatura=recuperarFloat("txtestatura")
 
+    let mensajeBievenido="Bienvenido  "+ nombre  +" " + apellido
+
+    mostrarTexto("Resultado",mensajeBievenido)
 }
+
+mostrarTexto=function(idComponete,mensaje){
+    let componete
+    componete=document.getElementById(idComponete)
+    componete.innerText=mensaje
+}
+
 
 
 recuperarTexto=function(idComponete){
