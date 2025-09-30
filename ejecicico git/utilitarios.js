@@ -11,6 +11,8 @@ saludar=function(){
     mostrarTexto("Resultado",mensajeBievenido)
 
     mostrarImagen("ImgSaludo","/imagenes/ok.gif")
+
+    mostrarTextoEnCaja("txtnombre", "")
 }
 
 mostrarImagen=function(idComponente, rutaImagen){
@@ -18,7 +20,11 @@ mostrarImagen=function(idComponente, rutaImagen){
     componente.src = rutaImagen
 }
 
-
+mostrarTextoEnCaja=function(idComponete,mensaje){
+    let componete
+    componete=document.getElementById(idComponete)
+    componete.value=mensaje
+}
 
 mostrarTexto=function(idComponete,mensaje){
     let componete
