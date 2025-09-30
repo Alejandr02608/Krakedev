@@ -9,7 +9,16 @@ saludar=function(){
     let mensajeBievenido="Bienvenido  "+ nombre  +" " + apellido
 
     mostrarTexto("Resultado",mensajeBievenido)
+
+    mostrarImagen("ImgSaludo","/imagenes/ok.gif")
 }
+
+mostrarImagen=function(idComponente, rutaImagen){
+    let componente = document.getElementById(idComponente)
+    componente.src = rutaImagen
+}
+
+
 
 mostrarTexto=function(idComponete,mensaje){
     let componete
