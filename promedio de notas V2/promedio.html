@@ -1,0 +1,28 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Notas - Versión 2</title>
+</head>
+<body>
+
+    <h1>Promedio de Notas - Versión 2</h1>
+
+    <p>Ingrese las tres notas:</p>
+    <input type="number" id="txtNota1" placeholder="Nota 1" min="0" max="10">
+    <input type="number" id="txtNota2" placeholder="Nota 2" min="0" max="10">
+    <input type="number" id="txtNota3" placeholder="Nota 3" min="0" max="10">
+    <br><br>
+
+    <button onclick="calcularPromedioNotas()">Calcular Promedio</button>
+
+    <h3>Promedio: <span id="lblPromedio">-</span></h3>
+    <p id="lblMensaje"></p>
+    <img id="imgResultado" src="" alt="Resultado" width="200">
+
+    <script src="PROMEDIO.js"></script>
+</body>
+</html>
