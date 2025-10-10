@@ -16,16 +16,16 @@ function calcularPromedioNotas() {
 
     if (promedio > 0 && promedio < 5) {
         mensaje = "REPROBADO 😞";
-        imagen = "./imagenes/reprobada-donramon.gif";
+        imagen = "/imagenes/reprobada-donramon.gif";
     } else if (promedio >= 5 && promedio <= 8) {
         mensaje = "BUEN TRABAJO 🙂";
-        imagen = "./imagenes/disco.gif";
+        imagen = "/imagenes/disco.gif";
     } else if (promedio > 8 && promedio <= 10) {
         mensaje = "EXCELENTE 🎉";
-        imagen = "./imagenes/ok.gif";
+        imagen = "/imagenes/ok.gif";
     } else {
         mensaje = "DATOS INCORRECTOS ⚠️";
-        imagen = "./imagenes/failed-failure.gif";
+        imagen = "/imagenes/failed-failure.gif";
     }
 
     // Mostrar el mensaje
