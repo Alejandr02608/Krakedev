@@ -1,50 +1,44 @@
-
 mostrarImagen = function (idComponente, rutaImagen) {
-    let componente;
-    componente = document.getElementById(idComponente);
-    componente.src = rutaImagen;
+    let componente = document.getElementById(idComponente);
+    if (componente) {
+        componente.src = rutaImagen;
+    } else {
+        
+    }
 }
+
 mostrarTexto = function (idComponente, mensaje) {
-    let componente;
-    componente = document.getElementById(idComponente);
-    componente.innerText = mensaje;
+    let componente = document.getElementById(idComponente);
+    if (componente) {
+        componente.innerText = mensaje;
+    } else {
+        console.log("No se encontró el elemento con id:", idComponente);
+    }
 }
+
 mostrarTextoEnCaja = function (idComponente, mensaje) {
-    let componente;
-    componente = document.getElementById(idComponente);
-    componente.value = mensaje;
+    let componente = document.getElementById(idComponente);
+    if (componente) {
+        componente.value = mensaje;
+    } else {
+        console.log("No se encontró el elemento con id:", idComponente);
+    }
 }
 
 recuperarTexto = function (idComponente) {
-    let componente;
-    let valorIngresado;
-    componente = document.getElementById(idComponente);
-    valorIngresado = componente.value;
-    return valorIngresado;
+    let componente = document.getElementById(idComponente);
+    if (componente) {
+        return componente.value;
+    } else {
+        console.error("No se encontró el elemento con id:", idComponente);
+        return "";
+    }
 }
 
 recuperarInt = function (idComponente) {
-    let valorCaja = recuperarTexto(idComponente);
-    let valorEntero = parseInt(valorCaja);
-    return valorEntero;
+    return parseInt(recuperarTexto(idComponente));
 }
 
 recuperarFloat = function (idComponente) {
-    let valorCaja = recuperarTexto(idComponente);
-    let valorFlotante = parseFloat(valorCaja);
-    return valorFlotante;
+    return parseFloat(recuperarTexto(idComponente));
 }
-
-limpiar = function () {
-    //Cajas de texto
-    mostrarTexto("txtProducto", "");
-    mostrarTexto("txtPrecio", "0.0");
-    mostrarTexto("txtCantidad", "0");
-    mostrarTexto("txtDescuento", "0");
-
-    //Labels de resultados
-    mostrarTexto("lblSubtotal", "0.0");
-    mostrarTexto("lblDescuento", "0.0");
-    mostrarTexto("lblValorIVA", "0.0");
-    mostrarTexto("lblTotal", "0.0");
-    mostrarTexto("lblResumen", ""); }

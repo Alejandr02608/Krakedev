@@ -28,7 +28,7 @@ let existeError = false
 //--------------------------------------------------------------------------
     esNotaValida=function(nota,idComponeteError){
         let hayErrores = false
-
+l
     if(isNaN(nota)){
         mostrarTexto(idComponeteError,"Debe ingresar un numero")
         hayErrores = true

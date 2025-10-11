@@ -10,7 +10,7 @@ function calcularValorDescuento(monto, porcentajeDescuento) {
 
 // Calcula el IVA (12%)
 function calcularIVA(monto) {
-    return (monto * 12) / 100;
+    return (monto * 15) / 100;
 }
 
 // Calcula el total = subtotal - descuento + IVA
