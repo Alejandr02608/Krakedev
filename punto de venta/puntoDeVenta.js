@@ -50,7 +50,7 @@ function calcularValorTotal() {
         mostrarTexto("lblError3", errorPrecio);
         hayError = true;
     }
-    if (descuento === "" || isNaN(descuento)) {
+    if (descuento == "" || isNaN(descuento)) {
         mostrarTexto("lblError4", "Solo se permiten números.");
         hayError = true;
     }

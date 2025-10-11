@@ -89,13 +89,13 @@ body{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 30px;
-    align-items: center;      /* Centra horizontalmente los resultados */
-    text-align: center;       /* Centra el texto dentro de cada div */
+    align-items: center;      
+    text-align: center;      
 }
 .resultado > div {
-    margin-bottom: 18px;      /* Espacio entre cada resultado */
-    width: 100%;              /* Ocupa todo el ancho disponible */
-    max-width: 350px;         /* Opcional: limita el ancho para mejor visualización */
+    margin-bottom: 18px;      
+    width: 100%;             
+    max-width: 350px;         
 }
 .error{
     color:red;
@@ -106,5 +106,5 @@ body{
     margin-top: 24px;
     font-weight: bold;
     color: #333;
-    text-align: center;       /* Centra el texto del resumen */
+    text-align: center;      
 }
