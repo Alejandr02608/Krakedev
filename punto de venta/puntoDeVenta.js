@@ -84,3 +84,4 @@ function calcularValorTotal() {
 function mostrarTexto(id, mensaje) {
     document.getElementById(id).innerText = mensaje;
 }
+
