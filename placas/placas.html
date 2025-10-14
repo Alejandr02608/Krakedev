@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validar Placa</title>
+    <script src="utilitariosCadena.js"></script>
+    <script src="serviciosPlacas.js"></script>
+    <script src="placas.js"></script>
+    <link rel="stylesheet" href="placas.css">
+</head>
+<body>
+    <div>
+        <label>Ingrese la placa:</label>
+        <input type="text" id="txtPlaca"/>
+        <button onclick="validarPlaca(document.getElementById('txtPlaca').value)">VALIDAR</button>
+        <input type="button" value="LIMPIAR" onclick="limpiar()"/>
+        
+
+        <!-- Etiquetas para resultados -->
+        <div id="lblEstado"></div>
+        <div id="lblErrores"></div>
+
+        <!-- Nuevas etiquetas -->
+        <div id="lblProvincia"></div>
+        <div id="lblTipoVehiculo"></div>
+        <div id="lblDiaPicoYPlaca"></div>
+
+
+</body> 
+</html>
+
+
