@@ -91,7 +91,7 @@ function obtenerTipoVehiculo(placa) {
 function obtenerDiaPicoYPlaca(placa) {
     // Obtener fecha actual
     let fecha = new Date();
-    let diaSemana = fecha.getDay(); // 0=Domingo, 1=Lunes, ..., 6=Sábado
+    let diaSemana = fecha.getDay(); // 
 
     // Si es fin de semana, retornar mensaje de libre circulación
     if (diaSemana === 0) {
