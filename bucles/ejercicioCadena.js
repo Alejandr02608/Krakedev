@@ -40,3 +40,32 @@ function invertirCadena(cadena) {
     }
     return resultado;
 }
+
+function buscarLetra(cadena, letra) {
+    var letraAlt
+    var existeLetra = false;
+    for(var i=0; i<cadena.length; i++){
+        letraAlt=cadena.charAt(i);
+        if(letraAlt==letra){
+            existeLetra=true;
+
+    }
+}if(existeLetra == true){
+    return true;
+}else{
+    return false;
+}
+
+}
+
+function contarMayusculas(cadena){
+    var letra;
+    let contadorMayusculas
+    for(let i=0; i<cadena.length; i++){
+        letra=cadena.charAt(i);
+        if(esMayuscula(letra)){
+            contadorMayusculas++;
+        }
+    }
+    console.log(contadorMayusculas);
+    }
