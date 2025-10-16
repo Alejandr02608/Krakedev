@@ -18,7 +18,7 @@ function validarPassword() {
         return false;
     }
     if (!/[*_-]/.test(password)) {
-        alert("La contraseña debe contener al menos un caracter especial como * o -.");
+        alert("La contraseña debe contener al menos un caracter especial como * -.");
         return false;
     }
     return true;
@@ -31,3 +31,4 @@ function ejecutarValidacion() {
         alert("Contraseña inválida.");
     }
     }
+    
