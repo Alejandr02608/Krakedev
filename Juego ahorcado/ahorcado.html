@@ -2,31 +2,38 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <title>Juego del Ahorcado</title>
     <link rel="stylesheet" type="text/css" href="ahorcado.css">
     <script src="ahorcado.js"></script>
 </head>
 
 <body>
     <div class="containerMain">
-
         <div class="containerLefth">
-            <h3>JUEGO DEL AHORACADO</h3>
+            <h3>JUEGO DEL AHORCADO</h3>
+
             <div>Ingresa una palabra de 5 letras</div>
             <input type="password" id="txtSecreta" />
-            <input type="button" id="btnGuardar" value="GUARDAR" onclick="guardarPalabra()"/>
+            <input type="button" id="btnGuardar" value="GUARDAR" onclick="guardarPalabra()" />
+
             <div>Ingresa una letra:</div>
-            <input type="text" id="txtLetra">
-            <input type="button" id="btnValidar" value="VALIDAR" onclick="validar()"/>
-            <br/>
+            <input type="text" id="txtLetra" maxlength="1">
+            <input type="button" id="btnValidar" value="VALIDAR" onclick="ingresarLetra()" />
+
+            <br><br>
+
             <div>
-                <div id="div0"> </div>
-                <div id="div1"> </div>
-                <div id="div2"> </div>
-                <div id="div3"> </div>
-                <div id="div4"> </div>
+                <div id="div1"></div>
+                <div id="div2"></div>
+                <div id="div3"></div>
+                <div id="div4"></div>
+                <div id="div5"></div>
             </div>
-            <img id="ahorcadoImagen" src="">
+
+            <img id="ahorcado" src="Ahorcado0.png" alt="Ahorcado">
         </div>
+
         <div class="containerRigth">
             <img src="./fondo.jpg" width="100%" />
             <img src="./krakeLogo.png" class="imgLogo" width="100%" />
