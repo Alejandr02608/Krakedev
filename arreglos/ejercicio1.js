@@ -32,6 +32,7 @@ probarAgregarNotas = function () {
  */
 agregarNotas = function (nota) {
     notas.push(nota);
+    mostrarNotas()
 };
 
 /**
@@ -65,3 +66,29 @@ ejecutarPromedio = function () {
         mostrarTexto("lblPromedio", "Promedio: " + promedioCalculado.toFixed(2));
     }
 };
+
+
+generarTabla=function(){
+    let contenidoTabla=""
+    let ComTabla = document.getElementById("divTabla")
+    contenidoTabla+="<table><tr><td>Dos</td></tr><tr><td>Tres</td></tr></table>"
+    ComTabla.innerHTML= contenidoTabla
+}
+
+
+mostrarNotas = function(){
+    let cmpTabla = document.getElementById("divTabla")
+    let contenidoTabla = "<table><tr>Nota<th></th></tr>";
+    let miNota
+    //Por cada elemeto genera uan fila 
+    //Barrer el arreglo 
+    for(let i=0 ; i<notas.length;i++){
+        miNota=notas[i];
+        contenidoTabla+="<tr><td>";
+        contenidoTabla+=miNota;
+        contenidoTabla+="</tr></td>";
+    }
+    //table que cierra se agrega afuera del for 
+    contenidoTabla+="</table>"
+    cmpTabla.innerHTML=contenidoTabla;
+}
