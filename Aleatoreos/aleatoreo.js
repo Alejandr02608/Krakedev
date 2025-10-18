@@ -15,12 +15,11 @@ function generarAleatorios() {
 
     // Validar que sea un número entre 5 y 20
     if (isNaN(cantidad) || cantidad < 5 || cantidad > 20) {
-        mostrarTexto("txtCantidad", "⚠️ Ingrese un número válido entre 5 y 20.");
         return;
     }
 
     // Limpiar mensaje anterior
-    mostrarTexto("txtCantidad", "Generando " + cantidad + " números aleatorios...");
+    mostrarTexto("lblMensaje", "Generando " + cantidad + " números aleatorios...");
 
     // c. Recorrer con un for desde 0 hasta cantidad - 1
     for (let i = 0; i < cantidad; i++) {
