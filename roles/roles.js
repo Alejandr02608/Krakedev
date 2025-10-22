@@ -73,33 +73,76 @@ function agregarEmpleado(empleado) {
 }
 
 
+function modificarEmpleado(empleado) {
+    for (let i = 0; i < empleados.length; i++) {
+        if (empleados[i].cedula === empleado.cedula) {
+            empleados[i] = empleado; // reemplaza datos
+            return true;
+        }
+    }
+    return false;
+}
+
 function guardar() {
     let cedula = recuperarTexto("txtCedula");
     let nombre = recuperarTexto("txtNombre");
     let apellido = recuperarTexto("txtApellido");
     let sueldo = recuperarFloat("txtSueldo");
 
-    if (cedula.length < 3 || isNaN(parseInt(cedula)) ||
-        nombre.length < 3 || !isNaN(nombre) ||
-        isNaN(sueldo)) {
-        mostrarTexto("lblErrorCedula", "Error en las validaciones");
-        return;
-    }
+    // Validaciones aquí...
+
+    let empleado = { cedula, nombre, apellido, sueldo };
 
     if (esNuevo) {
-        let nuevoEmpleado = {
-            cedula: cedula,
-            nombre: nombre,
-            apellido: apellido,
-            sueldo: sueldo
-        };
-
-        if (agregarEmpleado(nuevoEmpleado)) {
-            mostrarTexto("lblErrorCedula", "EMPLEADO GUARDADO CORRECTAMENTE");
+        if (agregarEmpleado(empleado)) {
+            mostrarMensaje("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
             deshabilitarCamposEmpleado();
         } else {
-            mostrarTexto("lblErrorCedula", "YA EXISTE UN EMPLEADO CON LA CÉDULA " + cedula);
+            mostrarMensaje("YA EXISTE UN EMPLEADO CON LA CÉDULA " + cedula);
+        }
+    } else {
+        if (modificarEmpleado(empleado)) {
+            mostrarMensaje("EMPLEADO MODIFICADO CORRECTAMENTE");
+            mostrarEmpleados();
+            deshabilitarCamposEmpleado();
+        } else {
+            mostrarMensaje("NO SE PUDO MODIFICAR EL EMPLEADO");
         }
     }
+}
+
+
+
+function ejecutarBusqueda() {
+    let cedula = recuperarTexto("txtBusquedaCedula");
+    let empleado = buscarEmpleado(cedula);
+
+    if (empleado == null) {
+        alert("EMPLEADO NO EXISTE");
+        return;
+    }
+
+    // Llenar cajas con datos
+    asignarTexto("txtCedula", empleado.cedula);
+    asignarTexto("txtNombre", empleado.nombre);
+    asignarTexto("txtApellido", empleado.apellido);
+    asignarTexto("txtSueldo", empleado.sueldo);
+
+    // Habilitar campos y botón guardar
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+
+    esNuevo = false;
+}
+
+
+function limpiar() {
+    limpiarComponente("txtCedula");
+    limpiarComponente("txtNombre");
+    limpiarComponente("txtApellido");
+    limpiarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
