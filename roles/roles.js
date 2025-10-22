@@ -146,3 +146,41 @@ function limpiar() {
     limpiarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
+
+function buscarPorRol() {
+    let cedula = recuperarTexto("txtBusquedaCedulaRol");
+    let empleado = buscarEmpleado(cedula);
+
+    if (empleado == null) {
+        alert("EMPLEADO NO EXISTE");
+        return;
+    }
+
+    mostrarTexto("infoCedula", empleado.cedula);
+    mostrarTexto("infoNombre", empleado.nombre);
+    mostrarTexto("infoSueldo", empleado.sueldo);
+}
+
+function calcularAporteEmpleado(sueldo) {
+    return sueldo * 0.0945;
+}
+
+function calcularValorAPagar(sueldo, descuento, aporteIESS) {
+    return sueldo - descuento - aporteIESS;
+}
+
+function calcularRol() {
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuento = recuperarFloat("txtDescuentos");
+
+    if (isNaN(descuento) || descuento < 0 || descuento > sueldo) {
+        alert("ERROR EN DESCUENTOS");
+        return;
+    }
+
+    let aporte = calcularAporteEmpleado(sueldo);
+    mostrarTexto("infoIESS", aporte.toFixed(2));
+
+    let total = calcularValorAPagar(sueldo, descuento, aporte);
+    mostrarTexto("infoPago", total.toFixed(2));
+}
