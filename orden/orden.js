@@ -24,6 +24,7 @@ function guardarPersona() {
   if (nombre && !isNaN(edad)) {
     const nuevaPersona = { nombre, edad };
     personas.push(nuevaPersona);
+    //El método setItem() de la interfaz Storage, cuando reciba una clave y un valor, añadirá estos al almacén, o actualizará el valor si la clave ya existe.
     localStorage.setItem("personas", JSON.stringify(personas));
   }
 }
@@ -47,6 +48,7 @@ function mostrarPersonas() {
 }
 
 function ordenarPorEdad() {
+    //El método sort() ordena los elementos de un arreglo (array) localmente y devuelve el arreglo ordenado.
   personas.sort((a, b) => b.edad - a.edad);
   mostrarPersonas();
 }
