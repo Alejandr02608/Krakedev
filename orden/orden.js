@@ -6,8 +6,8 @@ let personas = [
 ];
 
 function agregarPersona() {
-  const nombre = document.getElementById("nombreInput").value;
-  const edad = parseInt(document.getElementById("edadInput").value);
+  let nombre = document.getElementById("nombreInput").value;
+  let edad = parseInt(document.getElementById("edadInput").value);
 
   if (nombre && !isNaN(edad)) {
     const nuevaPersona = { nombre, edad };
@@ -18,8 +18,8 @@ function agregarPersona() {
 }
 
 function guardarPersona() {
-  const nombre = document.getElementById("nombreInput").value;
-  const edad = parseInt(document.getElementById("edadInput").value);
+  let nombre = document.getElementById("nombreInput").value;
+  let edad = parseInt(document.getElementById("edadInput").value);
 
   if (nombre && !isNaN(edad)) {
     const nuevaPersona = { nombre, edad };
@@ -29,17 +29,19 @@ function guardarPersona() {
 }
 
 function mostrarPersonas() {
-  const tabla = document.getElementById("tablaPersonas");
+  let tabla = document.getElementById("tablaPersonas");
   tabla.innerHTML = "";
 
   personas.forEach(p => {
-    const fila = document.createElement("tr");
+    let fila = document.createElement("tr");
     fila.innerHTML = `
       <td>${p.nombre}</td>
       <td>${p.edad}</td>
       <td>${p.edad * 12}</td>
       <td>${p.edad * 365}</td>
     `;
+    //Agrega un nuevo nodo al final de la lista de un elemento hijo de un elemento padre especificado.
+    //
     tabla.appendChild(fila);
   });
 }
@@ -65,7 +67,7 @@ function encontrarMayor() {
 }
 
 function determinarMenor() {
-  const menor = encontrarMenor();
+  let menor = encontrarMenor();
   console.log("Menor:", menor.nombre, menor.edad);
 }
 
@@ -83,7 +85,7 @@ function limpiarTabla() {
   document.getElementById("tablaPersonas").innerHTML = "";
 }
 
-// ✅ Exponer funciones al ámbito global
+//  Exponer funciones al ámbito global
 window.agregarPersona = agregarPersona;
 window.guardarPersona = guardarPersona;
 window.mostrarPersonas = mostrarPersonas;
