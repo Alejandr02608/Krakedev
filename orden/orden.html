@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Personas</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 6px;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body onload="mostrarPersonas()">
+
+  <h2>Agregar Persona</h2>
+  <label>Nombre: <input type="text" id="nombreInput"></label>
+  <label>Edad: <input type="number" id="edadInput"></label>
+  <button onclick="agregarPersona()">Agregar</button>
+  <button onclick="guardarPersona()">Guardar</button>
+
+  <h2>Acciones</h2>
+  <button onclick="mostrarPersonas()">Mostrar Personas</button>
+  <button onclick="ordenarPorEdad()">Ordenar por Edad</button>
+  <button onclick="determinarMayor()">Encontrar Mayor</button>
+  <button onclick="determinarMenor()">Encontrar Menor</button>
+  <button onclick="limpiarTabla()">Limpiar Tabla</button>
+
+  <h2>Tabla de Personas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Edad en Meses</th>
+        <th>Edad en Días</th>
+      </tr>
+    </thead>
+    <tbody id="tablaPersonas"></tbody>
+  </table>
+
+  <script type="module" src="orden.js"></script>
+</body>
+</html>
