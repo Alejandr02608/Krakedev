@@ -1,0 +1,196 @@
+label
+Resumen
+Proporciona una sentencia con un identificador al que se puede referir al usar las sentencias break o continue.
+Por ejemplo, puede usar una etiqueta para identificar un bucle, y entonces usar las sentencias break o continue para indicar si un programa debería interrumpir el bucle o continuar su ejecución.
+
+
+for 
+
+Resumen
+Crea un bucle que consiste en tres expresiones opcionales, encerradas en paréntesis y separadas por puntos y comas, seguidas de una sentencia ejecutada en un bucle.
+
+length
+
+Descripción
+length es la propiedad de una función objeto, e indica el número de argumentos que una función requiere, por ejemplo, el número de parámetros formales. Este número no incluye rest parameter. En cambio, arguments.length es local a una función y aporta el número de argumentos actuales pasados a una función.
+
+
+switch
+
+La declaración switch evalúa una expresión, comparando el valor de esa expresión con una instancia case, y ejecuta declaraciones asociadas a ese case, así como las declaraciones en los case que siguen.
+
+
+🧠 Funciones: estructura y propósito
+Una función en JavaScript es un bloque reutilizable de código que realiza una tarea específica. Su estructura básica es:
+
+javascript
+function nombreFuncion(param1, param2) {
+  // lógica
+  return resultado;
+}
+Parámetros de entrada: Son los valores que recibe la función para trabajar. Ej: param1, param2.
+
+Valor de salida: Es lo que devuelve la función con return. Si no hay return, la función devuelve undefined.
+
+Ejemplo práctico:
+
+javascript
+function calcularTotal(precio, cantidad) {
+  return precio * cantidad;
+}
+Entrada: precio, cantidad
+
+Salida: total calculado
+
+🔍 Validaciones: protege tu lógica
+Antes de ejecutar la lógica principal, valida los datos de entrada. Esto evita errores y mejora la experiencia del usuario.
+
+Ejemplo de validación:
+
+javascript
+function agregarProducto(nombre, precio) {
+  if (!nombre || typeof nombre !== 'string') {
+    console.error('Nombre inválido');
+    return;
+  }
+  if (isNaN(precio) || precio <= 0) {
+    console.error('Precio inválido');
+    return;
+  }
+
+  // Lógica para agregar el producto
+}
+🔁 Bucles for: recorrido controlado
+El bucle for es ideal para recorrer arrays o repetir acciones un número determinado de veces.
+
+Estructura:
+
+javascript
+for (let i = 0; i < array.length; i++) {
+  // lógica con array[i]
+}
+Ejemplo con validación dentro del bucle:
+
+javascript
+const productos = [
+  { nombre: 'Mouse', precio: 25 },
+  { nombre: '', precio: -10 },
+  { nombre: 'Teclado', precio: 45 }
+];
+
+for (let i = 0; i < productos.length; i++) {
+  const producto = productos[i];
+  if (!producto.nombre || producto.precio <= 0) {
+    console.warn(Producto inválido en índice ${i});
+    continue;
+  }
+  console.log(Producto válido: ${producto.nombre});
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+🧩 1. Estructura de Datos
+Primero, necesitas una estructura para almacenar los productos. Como no se permite usar inteligencia artificial para generar código, lo ideal es que tú mismo declares un array de objetos:
+
+js
+let productos = [];
+Cada producto será un objeto con las propiedades: nombre, descripcion, categoria, precio, stock.
+
+🧪 2. Validaciones
+Debes crear funciones específicas para validar cada campo. Por ejemplo:
+
+validarNombre(nombre)
+
+validarDescripcion(descripcion)
+
+validarCategoria(categoria)
+
+validarPrecio(precio)
+
+validarStock(stock)
+
+Cada función debe retornar un mensaje de error si el campo es inválido, o null si es válido. Usa expresiones regulares para validar letras, mayúsculas, decimales, etc.
+
+🧠 3. Guardar o Actualizar Producto
+Cuando el usuario presione el botón “Guardar”:
+
+Captura los valores de los inputs.
+
+Ejecuta todas las funciones de validación.
+
+Si hay errores, muéstralos debajo de cada campo usando .error.
+
+Si todo está bien:
+
+Busca si el producto ya existe por nombre exacto.
+
+Si existe, actualiza sus propiedades.
+
+Si no, agrégalo al array productos.
+
+Limpia los campos y los mensajes de error.
+
+📋 4. Mostrar Productos en la Tabla
+Crea una función renderizarTabla() que:
+
+Recorra el array productos.
+
+Cree filas con los datos.
+
+Calcule el precio con IVA:
+
+precioConIVA
+=
+(
+precio
+⋅
+1.12
+)
+.
+𝑡
+𝑜
+𝐹
+𝑖
+𝑥
+𝑒
+𝑑
+(
+2
+)
+Inserte las filas en el <tbody> de la tabla.
+
+Esta función debe ejecutarse cada vez que se agregue, actualice o elimine un producto.
+
+🗑️ 5. Eliminar Producto
+Crea una función eliminarProducto(nombre) que:
+
+Verifique que el campo no esté vacío.
+
+Busque el producto por nombre exacto (case-sensitive).
+
+Si lo encuentra, lo elimina del array.
+
+Si no, muestra un mensaje de error debajo del campo.
+
+Llama a renderizarTabla() y actualizarEstadisticas().
+
+📊 6. Estadísticas Dinámicas
+Crea una función actualizarEstadisticas() que:
+
+Calcule:
+
+Total de productos: productos.length
+
+Total de stock: suma de producto.stock
+
+Valor del inventario: suma de producto.precio * producto.stock
+
+Actualice los elementos HTML correspondientes.
+
+🎨 7. Experiencia Visual
+Usa la clase .error para mostrar los mensajes.
+
+Aplica estilos CSS para destacar los errores (bordes rojos, texto en rojo).
+
+Asegúrate de que los mensajes desaparezcan cuando el usuario corrija el campo.
