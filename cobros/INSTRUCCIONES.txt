@@ -1,0 +1,162 @@
+================================================================================
+                    INTERFAZ INTERACTIVA DE COBROS
+================================================================================
+
+📍 UBICACIÓN: c:\Users\Alejandro\Desktop\Krakedev\cobros\
+
+📄 ARCHIVO PRINCIPAL: cobros.html
+
+================================================================================
+                           ¿CÓMO USAR?
+================================================================================
+
+1. ABRIR LA APLICACIÓN
+   ✓ Abre el archivo "cobros.html" en tu navegador
+   ✓ Se cargará la interfaz interactiva
+
+2. REGISTRAR UN CLIENTE
+   • Ve a la sección "➕ Nuevo Cliente"
+   • Ingresa el nombre del cliente
+   • Ingresa el monto adeudado
+   • Haz clic en "REGISTRAR CLIENTE"
+   • El cliente aparecerá en la sección "📋 Clientes Registrados"
+
+3. PROCESAR UN PAGO
+   • Ve a la sección "💳 Procesar Pago"
+   • Selecciona el cliente de la lista desplegable
+   • Ingresa el monto a pagar
+   • Selecciona la fecha del pago
+   • Elige el método de pago
+   • Haz clic en "REGISTRAR PAGO"
+   • El pago se registrará y aparecerá en el historial
+
+4. VER HISTORIAL
+   • Los pagos se muestran automáticamente en "📊 Historial de Pagos"
+   • Puedes buscar por nombre de cliente
+   • Haz clic en "Ver Pagos" en la tarjeta del cliente para ver solo sus pagos
+
+5. ELIMINAR DATOS
+   • Haz clic en "LIMPIAR HISTORIAL" para eliminar TODO
+   • O elimina clientes/pagos individualmente con el botón rojo "Eliminar"
+
+================================================================================
+                         CARACTERÍSTICAS
+================================================================================
+
+✅ RESUMEN TOTAL
+   - Total adeudado por todos los clientes
+   - Total pagado en todos los pagos
+
+✅ LISTA DE CLIENTES
+   - Ver nombre, monto original, pagado y pendiente
+   - Ver estado: ✅ PAGADO o ⏳ PENDIENTE
+   - Ver porcentaje de pago completado
+
+✅ SISTEMA DE PAGOS
+   - Métodos: Efectivo, Transferencia, Tarjeta, Cheque
+   - Validación automática (no permite pagar más de lo adeudado)
+   - Actualización de estado automática
+
+✅ HISTORIAL COMPLETO
+   - Ver todos los pagos en orden cronológico (más reciente primero)
+   - Búsqueda rápida por cliente
+   - Eliminar pagos si es necesario
+
+✅ ALMACENAMIENTO
+   - Los datos se guardan automáticamente en el navegador
+   - Persisten incluso después de cerrar y abrir la página
+   - No requiere conexión a internet
+
+================================================================================
+                         ARCHIVO DE ARCHIVOS
+================================================================================
+
+cobros.html           → Estructura HTML de la interfaz
+cobros.css            → Estilos CSS (colores, diseño, responsivo)
+cobros.js             → Lógica principal (eventos, actualizaciones)
+serviciosCobros.js    → Funciones auxiliares (cálculos, almacenamiento)
+README.md             → Documentación completa
+INSTRUCCIONES.txt     → Este archivo
+
+================================================================================
+                       MÉTODOS DE PAGO
+================================================================================
+
+1. EFECTIVO          → Pago en dinero físico
+2. TRANSFERENCIA     → Pago por transferencia bancaria
+3. TARJETA           → Pago por tarjeta de débito/crédito
+4. CHEQUE            → Pago con cheque
+
+================================================================================
+                       VALIDACIONES
+================================================================================
+
+✓ No permite montos negativos o cero
+✓ No permite pagar más de lo adeudado
+✓ Requiere completar todos los campos obligatorios
+✓ Valida fechas correctas
+✓ Pide confirmación antes de eliminar datos importantes
+
+================================================================================
+                        EJEMPLO DE USO
+================================================================================
+
+1. Cliente: "Juan Pérez" - Deuda Original: $1000
+   
+2. Registrar pago:
+   - Cliente: Juan Pérez (Deuda: $1000)
+   - Monto: $350
+   - Fecha: 01/03/2026
+   - Método: Efectivo
+   
+   Resultado:
+   - Deuda Pagada: $350
+   - Deuda Pendiente: $650
+   - Progreso: 35%
+   - Estado: ⏳ PENDIENTE
+
+3. Registrar segundo pago:
+   - Monto: $650
+   
+   Resultado:
+   - Deuda Pagada: $1000
+   - Deuda Pendiente: $0
+   - Progreso: 100%
+   - Estado: ✅ PAGADO
+
+================================================================================
+                      CONSEJOS ÚTILES
+================================================================================
+
+💡 Tips:
+   • Usa nombres completos para evitar confusión
+   • Revisa el historial regularmente
+   • La búsqueda es case-insensitive (mayúsculas/minúsculas no importan)
+   • Los pagos se ordenan por fecha (más recientes primero)
+   • Puedes ver resumen en la parte superior (total adeudado y pagado)
+
+⚠️ Importante:
+   • Los datos se guardan en localStorage del navegador
+   • Si limpias el cache, se pierden los datos
+   • No hay respaldo automático (considera hacer screenshots)
+   • Es una aplicación local (no se sincroniza entre dispositivos)
+
+================================================================================
+                    ¿PROBLEMAS?
+================================================================================
+
+Si el formulario no se limpia después de registrar:
+   → Recarga la página (F5 o Ctrl+R)
+
+Si los datos no se guardan:
+   → Verifica que el navegador tenga almacenamiento local habilitado
+   → Prueba con otro navegador
+
+Si algún cliente no aparece en la lista de pagos:
+   → Verifica que tenga deuda pendiente (Estado: PENDIENTE)
+   → Los clientes pagados no aparecen en la lista de pagos
+
+================================================================================
+                  DESARROLLADO POR: Krakedev
+                       Fecha: 2026
+================================================================================

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cobros</title>
+    <link rel="stylesheet" href="cobros.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>💰 Sistema de Cobros</h1>
+            <div class="resumen-total">
+                <p>Total Adeudado: <span id="totalAdeudado">$0.00</span></p>
+                <p>Total Pagado: <span id="totalPagado">$0.00</span></p>
+            </div>
+        </header>
+
+        <main>
+            <!-- SECCIÓN DE CLIENTES -->
+            <section class="seccion">
+                <h2>➕ Nuevo Cliente</h2>
+                <form id="formularioCliente">
+                    <div class="grupo-input">
+                        <label for="nombreCliente">Nombre Cliente:</label>
+                        <input type="text" id="nombreCliente" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="montoDeuda">Monto Adeudado ($):</label>
+                        <input type="number" id="montoDeuda" placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar Cliente</button>
+                </form>
+            </section>
+
+            <!-- SECCIÓN DE CLIENTES REGISTRADOS -->
+            <section class="seccion">
+                <h2>📋 Clientes Registrados</h2>
+                <div id="listaClientes" class="lista-clientes">
+                    <p class="sin-datos">No hay clientes registrados</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE PAGOS -->
+            <section class="seccion">
+                <h2>💳 Procesar Pago</h2>
+                <form id="formularioPago">
+                    <div class="grupo-input">
+                        <label for="clientePago">Selecciona Cliente:</label>
+                        <select id="clientePago" required>
+                            <option value="">-- Selecciona un cliente --</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="montoPago">Monto a Pagar ($):</label>
+                        <input type="number" id="montoPago" placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="fechaPago">Fecha Pago:</label>
+                        <input type="date" id="fechaPago" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="metodoPago">Método Pago:</label>
+                        <select id="metodoPago" required>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Transferencia">Transferencia</option>
+                            <option value="Tarjeta">Tarjeta Débito/Crédito</option>
+                            <option value="Cheque">Cheque</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Registrar Pago</button>
+                </form>
+            </section>
+
+            <!-- SECCIÓN DE HISTORIAL -->
+            <section class="seccion">
+                <h2>📊 Historial de Pagos</h2>
+                <div class="controles-historial">
+                    <input type="text" id="buscarCliente" placeholder="🔍 Buscar cliente...">
+                    <button class="btn btn-secondary" id="btnLimpiarHistorial">Limpiar Historial</button>
+                </div>
+                <div id="historialPagos" class="historial-pagos">
+                    <p class="sin-datos">No hay pagos registrados</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Sistema de Cobros - Krakedev</p>
+        </footer>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-contenido">
+            <h3 id="modalTitulo">Confirmación</h3>
+            <p id="modalMensaje"></p>
+            <div class="botones-modal">
+                <button class="btn btn-success" id="btnConfirmar">Confirmar</button>
+                <button class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="serviciosCobros.js"></script>
+    <script src="cobros.js"></script>
+</body>
+</html>
